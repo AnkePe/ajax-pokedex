@@ -49,7 +49,7 @@ const findPokemons = (myJson) => {
 
 
       console.log(pokImage, pokId, pokName, pokMove01)
-      // console.log(myJson2)
+      console.log(myJson2)
       console.log(document.getElementsByClassName("pokeID")[0])
       document.getElementsByClassName("pokeID")[0].innerText = pokId
       document.getElementsByClassName("pokeName")[0].innerText = pokName
@@ -60,12 +60,12 @@ const findPokemons = (myJson) => {
       document.getElementById("pokeImage").src = pokImage
 
 
-      fetch(`https://pokeapi.co/api/v2/evolution-chain/`)
+      fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokId}/`)
       .then(res => res.json())
       .then(myJson3 => console.log(myJson3))
 
-
- 
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png"
+      "https://pokeapi.co/api/v2/pokemon-species/5/"
 
     }
     })
