@@ -52,7 +52,7 @@ const findPokemons = (myJson) => {
       console.log(myJson2)
       console.log(document.getElementsByClassName("pokeID")[0])
       document.getElementsByClassName("pokeID")[0].innerText = pokId
-      document.getElementsByClassName("pokeName")[0].innerText = pokName
+      document.getElementsByClassName("pokeName")[0].innerHTML = pokName
       document.getElementById("move01").innerText = pokMove01
       document.getElementById("move02").innerText = pokMove02
       document.getElementById("move03").innerText = pokMove03
@@ -62,10 +62,29 @@ const findPokemons = (myJson) => {
 
       fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokId}/`)
       .then(res => res.json())
-      .then(myJson3 => console.log(myJson3))
+      .then(myJson3 => {
+          console.log(myJson3.evolves_from_species)
+        
+          let pokPrev = myJson3.evolves_from_species.url
+          let pokPrevId = pokPrev.split("/")[6]
+          console.log(pokPrevId)
 
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png"
-      "https://pokeapi.co/api/v2/pokemon-species/5/"
+          let pokPrevFoto = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokPrevId}.png`
+          // document.getElementById("pokePrevious").src = pokPrevFoto          
+          console.log(pokPrevFoto)
+          document.getElementById("pokePrevious").src = pokPrevFoto
+
+        
+      })
+      .catch(error => {
+        console.log(error)
+        
+        document.getElementById("pokePrevious").src = 'images/kruis.png'
+        document.getElementById("pokePrevious").height = '90px'   //afb verkleinen werkt niet 
+       
+      })
+
+      
 
     }
     })

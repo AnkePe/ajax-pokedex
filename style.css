@@ -22,13 +22,22 @@ body {
     padding: 20px 50px 30px;
   }
   #pokeImage {
-    display: block;
+    display: inline;
     margin: 20px 0;
     width: 180px;
     height: 180px;
     position: relative;
     left: -45px;
   }
+  #pokePrevious {
+    display: inline;
+    margin: 20px 0;
+    width: 180px;
+    height: 180px;
+    position: relative;
+    left: -45px;
+  }
+  
   .base-title {
     font-size: 1.3rem;
     font-weight: 700;
