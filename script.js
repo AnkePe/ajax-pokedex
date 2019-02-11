@@ -80,7 +80,11 @@ const findPokemons = (myJson) => {
         console.log(error)
         
         document.getElementById("pokePrevious").src = 'images/kruis.png'
-        document.getElementById("pokePrevious").height = '90px'   //afb verkleinen werkt niet 
+        document.getElementById("pokePrevious").style.height = '80px'   //afb verkleinen werkt niet 
+        document.getElementById("pokePrevious").style.width = 'auto'   //afb verkleinen werkt niet 
+        document.getElementById("pokePrevious").style.top = '-25px'   //afb verkleinen werkt niet 
+        document.getElementById("pokePrevious").style.left = '25px'   //afb verkleinen werkt niet 
+        document.getElementById("pokePrevious").style.margin = '45px'   //afb verkleinen werkt niet 
        
       })
 
